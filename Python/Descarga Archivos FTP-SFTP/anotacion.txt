@@ -1,0 +1,22 @@
+Variables de entorno: Puedes almacenar las contraseñas o la información sensible 
+en las variables de entorno de tu sistema operativo. Luego, en tu script de Python,
+ puedes usar el módulo os para acceder a estas variables de entorno.
+
+import os
+password = os.getenv('MY_PASSWORD')
+
+
+Módulo getpass: Si necesitas que un usuario introduzca una contraseña, 
+puedes usar el módulo getpass de Python, que oculta la entrada del usuario 
+para que la contraseña no se muestre en la pantalla.
+
+import getpass
+password = getpass.getpass()
+
+
+Keyring: El módulo keyring de Python permite acceder al keyring del sistema 
+para almacenar y recuperar contraseñas. Así, puedes guardar la contraseña en 
+el keyring una vez, y luego tu script de Python puede recuperarla cuando sea necesario.
+
+import keyring
+password = keyring.get_password("service", "username")
